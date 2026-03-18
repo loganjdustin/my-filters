@@ -24,7 +24,6 @@ youtube.com###related
 youtube.com##.ytp-autonav-toggle-button-container
 youtube.com##.ytp-endscreen-content
 youtube.com##ytd-endscreen-element-renderer
-youtube.com##ytd-watch-next-secondary-results-renderer
 youtube.com##ytd-miniplayer
 
 ! YouTube ads
