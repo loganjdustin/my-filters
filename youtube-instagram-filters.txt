@@ -1,0 +1,137 @@
+! Title: My Algorithm Filters
+! Description: Removes algorithmic content from YouTube and Instagram in Safari
+! Homepage: https://github.com/YOURUSERNAME/my-filters
+! Expires: 1 day
+! Version: 1.0.0
+! License: unlicense
+!
+! ============================================================
+! How to use in wBlock:
+!   Custom Filters → Add → paste the raw GitHub URL:
+!   https://raw.githubusercontent.com/YOURUSERNAME/my-filters/main/youtube-instagram-filters.txt
+! ============================================================
+
+
+! ============================================================
+! YOUTUBE — Shorts removal
+! ============================================================
+
+! Remove Shorts tab from sidebar nav
+youtube.com##ytd-guide-entry-renderer:has(a[href="/shorts"])
+
+! Remove Shorts shelf on homepage (two renderers YouTube uses)
+youtube.com##ytd-rich-shelf-renderer[is-shorts]
+youtube.com##ytd-reel-shelf-renderer
+
+! Remove Shorts items appearing in search results
+youtube.com##ytd-video-renderer:has(a[href*="/shorts/"])
+
+! Remove Shorts chip in topic filter bar
+youtube.com##yt-chip-cloud-chip-renderer:has([title="Shorts"])
+
+! Remove Shorts tab on channel pages
+youtube.com##tp-yt-paper-tab:has([title="Shorts"])
+
+
+! ============================================================
+! YOUTUBE — Homepage algorithm removal
+! ============================================================
+
+! Remove the entire algorithmic video grid on homepage
+youtube.com##ytd-browse[page-subtype="home"] ytd-rich-grid-renderer
+
+! Remove topic filter chips bar above homepage feed
+youtube.com##ytd-feed-filter-chip-bar-renderer
+
+! Remove masthead hero banner and promoted videos
+youtube.com##ytd-masthead-ad-v3-renderer
+youtube.com##ytd-brand-video-shelf-renderer
+youtube.com##ytd-brand-video-singleton-renderer
+
+! Remove "News" and "Previously watched" shelves on homepage
+youtube.com##ytd-rich-section-renderer
+
+
+! ============================================================
+! YOUTUBE — Watch page algorithm removal
+! ============================================================
+
+! Remove all sidebar recommendations while watching
+youtube.com##ytd-watch-flexy #secondary #related
+
+! Remove autoplay toggle button
+youtube.com##.ytp-autonav-toggle-button-container
+
+! Remove end-screen suggested video cards
+youtube.com##.ytp-endscreen-content
+youtube.com##ytd-endscreen-element-renderer
+
+! Remove "Up Next" / watch next section
+youtube.com##ytd-watch-next-secondary-results-renderer
+
+! Remove miniplayer popup
+youtube.com##ytd-miniplayer
+
+
+! ============================================================
+! YOUTUBE — Ads and promoted content
+! ============================================================
+
+youtube.com##ytd-ad-slot-renderer
+youtube.com##ytd-promoted-sparkles-web-renderer
+youtube.com##ytd-display-ad-renderer
+youtube.com##ytd-banner-promo-renderer
+youtube.com##ytd-statement-banner-renderer
+
+
+! ============================================================
+! YOUTUBE — General distractions
+! ============================================================
+
+! Remove notification bell
+youtube.com###notification-button
+
+! Remove Explore / Trending from sidebar
+youtube.com##ytd-guide-entry-renderer:has(a[href="/feed/explore"])
+
+! Remove "More from YouTube" extra sidebar sections
+youtube.com##ytd-guide-section-renderer:has([guide-refresh-section-identifier="subscriptions"]) ~ ytd-guide-section-renderer
+
+
+! ============================================================
+! YOUTUBE — Network blocks (tracking beacons)
+! ============================================================
+
+||youtube.com/api/stats/*$xhr,domain=youtube.com
+||youtube.com/ptracking*$xhr,domain=youtube.com
+||youtube.com/youtubei/v1/log_event*$xhr,domain=youtube.com
+||youtube.com/youtubei/v1/feedback*$xhr,domain=youtube.com
+
+
+! ============================================================
+! INSTAGRAM — Algorithm removal
+! ============================================================
+
+! Remove Reels tab from bottom navigation
+instagram.com##[aria-label="Reels"]
+instagram.com##a[href="/reels/"]
+
+! Remove Explore / Search tab
+instagram.com##a[href="/explore/"]
+
+! Remove Suggested Posts injected into feed
+instagram.com##div[data-testid="suggested-posts"]
+
+! Remove right sidebar suggested accounts
+instagram.com##[data-testid="non-vpv-ad"]
+
+! Remove Threads promotion banners
+instagram.com##div:has(> a[href*="threads.net"])
+
+
+! ============================================================
+! INSTAGRAM — Network blocks
+! ============================================================
+
+||instagram.com/logging/*$xhr,domain=instagram.com
+||instagram.com/ajax/bz*$xhr,domain=instagram.com
