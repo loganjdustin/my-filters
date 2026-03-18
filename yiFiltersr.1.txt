@@ -1,0 +1,45 @@
+! Title: Algorithm Filters
+! Description: Removes algorithmic content from YouTube and Instagram
+! Expires: 1 day
+! Version: 1.0.1
+
+! YouTube Shorts
+youtube.com##ytd-guide-entry-renderer:has(a[href="/shorts"])
+youtube.com##ytd-rich-shelf-renderer[is-shorts]
+youtube.com##ytd-reel-shelf-renderer
+youtube.com##ytd-video-renderer:has(a[href*="/shorts/"])
+youtube.com##yt-chip-cloud-chip-renderer:has([title="Shorts"])
+youtube.com##tp-yt-paper-tab:has([title="Shorts"])
+
+! YouTube homepage algorithm
+youtube.com##ytd-browse[page-subtype="home"] ytd-rich-grid-renderer
+youtube.com##ytd-feed-filter-chip-bar-renderer
+youtube.com##ytd-masthead-ad-v3-renderer
+youtube.com##ytd-brand-video-shelf-renderer
+youtube.com##ytd-rich-section-renderer
+
+! YouTube watch page
+youtube.com##ytd-watch-flexy #secondary #related
+youtube.com##.ytp-autonav-toggle-button-container
+youtube.com##.ytp-endscreen-content
+youtube.com##ytd-endscreen-element-renderer
+youtube.com##ytd-watch-next-secondary-results-renderer
+youtube.com##ytd-miniplayer
+
+! YouTube ads
+youtube.com##ytd-ad-slot-renderer
+youtube.com##ytd-promoted-sparkles-web-renderer
+youtube.com##ytd-display-ad-renderer
+youtube.com##ytd-banner-promo-renderer
+youtube.com##ytd-statement-banner-renderer
+
+! YouTube distractions
+youtube.com###notification-button
+youtube.com##ytd-guide-entry-renderer:has(a[href="/feed/explore"])
+
+! Instagram
+instagram.com##[aria-label="Reels"]
+instagram.com##a[href="/reels/"]
+instagram.com##a[href="/explore/"]
+instagram.com##div[data-testid="suggested-posts"]
+instagram.com##div:has(> a[href*="threads.net"])
