@@ -19,7 +19,8 @@ youtube.com##ytd-brand-video-shelf-renderer
 youtube.com##ytd-rich-section-renderer
 
 ! YouTube watch page
-youtube.com##ytd-watch-flexy #secondary #related
+youtube.com###secondary-inner
+youtube.com###related
 youtube.com##.ytp-autonav-toggle-button-container
 youtube.com##.ytp-endscreen-content
 youtube.com##ytd-endscreen-element-renderer
